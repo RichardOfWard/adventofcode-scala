@@ -1,4 +1,4 @@
-package day1
+package advent.day1
 
 import org.scalatest.FlatSpec
 
