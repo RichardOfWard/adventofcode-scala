@@ -2,22 +2,34 @@ package advent.day3
 
 import advent.Day
 
-import scala.collection.mutable
 
 object Day3 extends Day {
   val day = 3
 
-  var houses = new mutable.HashSet[(Int, Int)]()
-  var location = (0, 0)
-  houses.add(location)
+  def findHousesWithSantaDelivering() = {
+    val houses = new scala.collection.mutable.HashSet[(Int, Int)]()
+    val santa = new Deliverer(houses)
 
-  loadInput().foreach {
-    case '>' => location = (location._1 + 1, location._2); houses.add(location)
-    case '<' => location = (location._1 - 1, location._2); houses.add(location)
-    case '^' => location = (location._1, location._2 + 1); houses.add(location)
-    case 'v' => location = (location._1, location._2 - 1); houses.add(location)
-    case '\n' => ()
+    loadInput().foreach(santa.deliverToNext)
+
+    houses.size
   }
 
-  println(houses.size)
+  def findHousesWithSantaAndRobotHelper() = {
+    val houses = new scala.collection.mutable.HashSet[(Int, Int)]()
+    val santa = new Deliverer(houses)
+    val robotSanta = new Deliverer(houses)
+
+    val instructionRecipientOrder = Iterator.continually(List(santa, robotSanta)).flatten
+
+    instructionRecipientOrder.zip(loadInput().iterator).foreach {
+      case (deliverer, direction) => deliverer.deliverToNext(direction)
+    }
+
+    houses.size
+  }
+
+  println("With santa working alone: %d".format(findHousesWithSantaDelivering()))
+
+  println("With santa working with robot helper: %d".format(findHousesWithSantaAndRobotHelper()))
 }
