@@ -1,6 +1,6 @@
-package advent.day1
+package advent
 
-import advent.Day
+import advent.utils.FloorFinder
 
 object Day1 extends Day {
   val day = 1

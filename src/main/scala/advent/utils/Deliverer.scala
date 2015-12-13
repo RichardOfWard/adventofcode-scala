@@ -1,4 +1,4 @@
-package advent.day3
+package advent.utils
 
 import scala.collection.mutable
 

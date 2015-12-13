@@ -1,8 +1,6 @@
-package advent.day4
+package advent
 
 import java.security.MessageDigest
-
-import advent.Day
 
 object Day4 extends Day {
   override protected val day = 4

@@ -1,4 +1,4 @@
-package advent.day5
+package advent.utils
 
 class SantaString(string: String) {
   private val hasAtLeastThreeVowels: Boolean = string.count("aeiou".toList.contains) >= 3

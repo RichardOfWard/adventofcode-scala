@@ -1,6 +1,4 @@
-package advent.day2
-
-import advent.Day
+package advent
 
 object Day2 extends Day {
   val day = 2

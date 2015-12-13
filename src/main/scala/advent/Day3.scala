@@ -1,6 +1,6 @@
-package advent.day3
+package advent
 
-import advent.Day
+import advent.utils.Deliverer
 
 
 object Day3 extends Day {

@@ -1,4 +1,4 @@
-package advent.day1
+package advent.utils
 
 class FloorFinder(input: String) {
   def findFinalFloor(): Int =

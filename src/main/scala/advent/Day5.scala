@@ -1,6 +1,6 @@
-package advent.day5
+package advent
 
-import advent.Day
+import advent.utils.SantaString
 
 object Day5 extends Day {
   override protected def day: Int = 5
